@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    body { "MyText" }
-    difficulty { "MyString" }
-    author_id { 1 }
-    state { "MyString" }
-    link { "MyString" }
+    title
+    body
+    difficulty { nil }
+    author_id { nil }
+    state { nil }
   end
 end
