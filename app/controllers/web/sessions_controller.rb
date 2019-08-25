@@ -9,7 +9,7 @@ class Web::SessionsController < Web::ApplicationController
   	@session = Session.new(session_params)
   	if @session.valid?
   	  sign_in @session.user
-  	  redirect_to  :article_index
+  	  redirect_to  :articles
   	else
   	  render :new
   	end
