@@ -219,6 +219,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.1)
     state_machines (0.5.0)
     state_machines-activemodel (0.7.0)
       activemodel (>= 4.1, < 6.1)
@@ -277,6 +278,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   slim-rails
+  sqlite3
   state_machines
   state_machines-activerecord
   therubyracer

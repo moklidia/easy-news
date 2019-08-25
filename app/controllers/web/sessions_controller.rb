@@ -8,7 +8,16 @@ class Web::SessionsController < Web::ApplicationController
   def create
   	@session = Session.new(session_params)
   	if @session.valid?
-  	  redirect_to 
+  	  sign_in @session.user
+  	  redirect_to  :article_index
+  	else
+  	  render :new
+  	end
+  end
+
+  def destroy
+  	sign_out
+  	redirect_to :new_session
   end
 
   private
