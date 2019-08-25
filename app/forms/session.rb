@@ -1,9 +1,9 @@
 class Session
-  include Active Model::Model
+  include ActiveModel::Model
 
-  attr accessor(
-  	:email
-  	:password
+  attr_accessor(
+    :email,
+    :password
   )
 
   validates :email, presence: true, format: { with: /\A\S+@.+\.\S+\z/ }
@@ -11,13 +11,15 @@ class Session
   validate :user_valid?
 
   def user
-  	User.find_by(email: email)
+    User.find_by(email: email)
   end
 
   private
 
-  def user.valid?
-  	if user.blank? || !user.authenticate(password)
-  	  errors.add(:email, "email or password doesn't match" )
-  	end
+  def user_valid?
+    if user.blank? || !user.authenticate(password)
+      errors.add(:email, "email or password doesn't match" )
+    end
   end
+
+end
